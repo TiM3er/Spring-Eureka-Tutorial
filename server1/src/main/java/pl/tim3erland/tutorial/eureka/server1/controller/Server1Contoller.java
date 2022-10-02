@@ -42,7 +42,8 @@ public class Server1Contoller {
 
     @PostMapping("/test")
     private String test() {
-        return new RestTemplate().getForObject(eurekaClient.getApplications("server2").getRegisteredApplications().get(0).getInstances().get(0).getHomePageUrl() + "/test", String.class, Collections.emptyMap());
-
+        return new RestTemplate().getForObject(eurekaClient.getApplications("server2")
+                .getRegisteredApplications().get(0).getInstances().get(0)
+                .getHomePageUrl() + "/test", String.class, Collections.emptyMap());
     }
 }
